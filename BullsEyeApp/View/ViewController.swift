@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             title: "Hello",
             message: "The value of the slider is: \(currentValue)" +
             "\nThe target value is: \(targetValue)" +
-            "\n The difference is: \(differenceBetweenSliderAndTarget(slider: Int(slider.value), target: targetValue))",
+            "\n The difference is: \(differenceBetweenSliderAndTarget())",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
@@ -56,12 +56,14 @@ class ViewController: UIViewController {
     }
     
     
-    func differenceBetweenSliderAndTarget(slider: Int, target: Int) -> Int {
-        var difference = slider - target
-        if  difference < 0 {
-           difference = difference * -1
-        }
+    func differenceBetweenSliderAndTarget() -> Int {
+        let sliderInt = lroundf(self.slider.value)
+        let difference  = abs(targetValue - sliderInt)
         return difference
     }
+    
+//    func calculatePointsMadeByThePlayer() -> Int {
+//        
+//    }
     
 }
