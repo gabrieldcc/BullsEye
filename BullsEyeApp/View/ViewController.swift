@@ -9,7 +9,6 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    
     //MARK: - Vars
     private var targetValue = 0
     private var currentValue: Int = 0
@@ -28,7 +27,7 @@ final class ViewController: UIViewController {
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNewRound()
+        startNewGame()
         setupLabels()
     }
     
@@ -39,20 +38,18 @@ final class ViewController: UIViewController {
         calculatePlayerScore()
         showAlert()
     }
-    
+
     @IBAction func startsOverButton(_ sender: UIButton) {
-        targetValue = 0
-        currentValue = 0
         score = 0
         points = 0
-        difference = 0
-        round = 0
+        startNewGame()
+        setupLabels()
+        
     }
-    
+
     //MARK: - Funcs
-    
-    
-    private func setupNewRound() {
+
+    private func startNewGame() {
         targetValue = Int.random(in: 0...100)
         round += 1
         setupLabels()
@@ -74,23 +71,19 @@ final class ViewController: UIViewController {
         score += points
     }
     
-    
     private func showAlert() {
         let alert = UIAlertController(
             title: scoreTitle(difference),
-            message:
-                "The value of the slider is: \(currentValue)" +
-            "\nThe target value is: \(targetValue)" +
-            "\n The difference is: \(difference)" +
-            "\n Your current score is: \(score)" +
-            "\n You scored: \(points)",
+            message: "O valor que você acertou é: \(currentValue)" +
+            "\n Faltou: \(difference) para ser perfeito" +
+            "\n Sua pontuação é: \(points)",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
-            title: "Cool",
+            title: "Ok",
             style: .default,
-            handler: { newRound in
-                self.setupNewRound()
+            handler: { _ in
+                self.startNewGame()
             })
         
         alert.addAction(action)
@@ -101,14 +94,13 @@ final class ViewController: UIViewController {
         if difference <= 1 {
             return "Perfeito!"
         }
-        else if difference < 5 {
+        else if difference <= 5 {
             return "Quase lá"
         }
-        else if difference < 10 {
+        else if difference > 5 {
             return "Não foi dessa vez"
         }
         return String()
     }
-    
-    
+
 }
