@@ -67,6 +67,9 @@
                                 <rect key="frame" x="108" y="314" width="91" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start Over"/>
+                                <connections>
+                                    <action selector="startsOverButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tXU-g2-uKJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIB-BD-dAp">
                                 <rect key="frame" x="279" y="321" width="49" height="24"/>
@@ -155,6 +158,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="roundLabel" destination="09f-7G-bRI" id="Yxu-gM-w1i"/>
+                        <outlet property="scoreLabel" destination="fll-lf-N9p" id="p45-EN-nML"/>
                         <outlet property="slider" destination="xXK-9L-MR1" id="2vY-5y-1Xb"/>
                         <outlet property="targetLabel" destination="G6U-D4-ImF" id="IPp-BG-LBs"/>
                     </connections>

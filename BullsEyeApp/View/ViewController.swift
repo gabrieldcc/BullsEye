@@ -7,63 +7,108 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    
     
     //MARK: - Vars
-    var targetValue = 0
+    private var targetValue = 0
+    private var currentValue: Int = 0
+    private var score = 0
+    private var points = 0
+    private var difference = 0
+    private var round = 0
+    
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak private var targetLabel: UILabel!
+    @IBOutlet weak private var slider: UISlider!
+    @IBOutlet weak private var scoreLabel: UILabel!
+    @IBOutlet weak private var roundLabel: UILabel!
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        setupNewRound()
+        setupLabels()
     }
-    
-    //MARK: - IBOutlets
-    @IBOutlet weak var targetLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
     
     //MARK: - IBActions
     @IBAction func hitMeButton(_ sender: UIButton) {
+        currentValue = lroundf(slider.value)
+        differenceBetweenSliderAndTarget()
+        calculatePlayerScore()
         showAlert()
-        startNewRound()
+    }
+    
+    @IBAction func startsOverButton(_ sender: UIButton) {
+        targetValue = 0
+        currentValue = 0
+        score = 0
+        points = 0
+        difference = 0
+        round = 0
     }
     
     //MARK: - Funcs
-    func startNewRound() {
+    
+    
+    private func setupNewRound() {
         targetValue = Int.random(in: 0...100)
-        targetLabel.text = "\(targetValue)"
+        round += 1
+        setupLabels()
     }
     
-    func showAlert() {
-        let currentValue = Int(slider.value)
-        
+    private func setupLabels() {
+        scoreLabel.text = String(score)
+        targetLabel.text = String(targetValue)
+        roundLabel.text = String(round)
+    }
+    
+    private func differenceBetweenSliderAndTarget() {
+        let sliderInt = lroundf(self.slider.value)
+        difference  = abs(targetValue - sliderInt)
+    }
+    
+    private func calculatePlayerScore() {
+        points = 100 - difference
+        score += points
+    }
+    
+    
+    private func showAlert() {
         let alert = UIAlertController(
-            title: "Hello",
-            message: "The value of the slider is: \(currentValue)" +
+            title: scoreTitle(difference),
+            message:
+                "The value of the slider is: \(currentValue)" +
             "\nThe target value is: \(targetValue)" +
-            "\n The difference is: \(differenceBetweenSliderAndTarget())",
+            "\n The difference is: \(difference)" +
+            "\n Your current score is: \(score)" +
+            "\n You scored: \(points)",
             preferredStyle: .alert)
         
         let action = UIAlertAction(
             title: "Cool",
             style: .default,
-            handler: nil)
+            handler: { newRound in
+                self.setupNewRound()
+            })
         
         alert.addAction(action)
         present(alert, animated: true)
-        
-        print("o retorno do slider vs target é ")
     }
     
-    
-    func differenceBetweenSliderAndTarget() -> Int {
-        let sliderInt = lroundf(self.slider.value)
-        let difference  = abs(targetValue - sliderInt)
-        return difference
+    private func scoreTitle(_ difference: Int) -> String {
+        if difference <= 1 {
+            return "Perfeito!"
+        }
+        else if difference < 5 {
+            return "Quase lá"
+        }
+        else if difference < 10 {
+            return "Não foi dessa vez"
+        }
+        return String()
     }
     
-//    func calculatePointsMadeByThePlayer() -> Int {
-//        
-//    }
     
 }

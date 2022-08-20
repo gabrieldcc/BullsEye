@@ -103,6 +103,7 @@
 		6518E56D28ABDF5A00112985 /* BullsEyeApp */ = {
 			isa = PBXGroup;
 			children = (
+				65549D1828AFDB1D0090990C /* Model */,
 				65D6392328AFCCDA00B55E7D /* Resources */,
 				65D6392128AFCCB000B55E7D /* AppDelegate */,
 				65D6392228AFCCC800B55E7D /* View */,
@@ -126,6 +127,13 @@
 				6518E59428ABDF5C00112985 /* BullsEyeAppUITestsLaunchTests.swift */,
 			);
 			path = BullsEyeAppUITests;
+			sourceTree = "<group>";
+		};
+		65549D1828AFDB1D0090990C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		65D6392128AFCCB000B55E7D /* AppDelegate */ = {
