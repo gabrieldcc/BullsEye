@@ -29,6 +29,9 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         startNewGame()
         setupLabels()
+        let thumbImageNormal = UIImage(systemName: "target")!
+        thumbImageNormal.withTintColor(.red)
+        slider.setThumbImage(thumbImageNormal, for: .normal)
     }
     
     //MARK: - IBActions
@@ -50,7 +53,7 @@ final class ViewController: UIViewController {
     //MARK: - Funcs
 
     private func startNewGame() {
-        targetValue = Int.random(in: 0...100)
+        targetValue = Int.random(in: 1...100)
         round += 1
         setupLabels()
     }
