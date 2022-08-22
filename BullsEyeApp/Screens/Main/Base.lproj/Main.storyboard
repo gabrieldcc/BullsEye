@@ -102,7 +102,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
                                         <connections>
-                                            <segue destination="bcd-Hu-3r8" kind="show" id="0ru-Sh-Obk"/>
+                                            <segue destination="bcd-Hu-3r8" kind="presentation" modalTransitionStyle="flipHorizontal" id="0ru-Sh-Obk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09f-7G-bRI">
@@ -190,17 +190,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-mW-kIR">
-                                <rect key="frame" x="404" y="354" width="88" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Close"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2Bm-e4-M0c">
+                                <rect key="frame" x="-11" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-mW-kIR">
+                                <rect key="frame" x="404" y="348" width="88" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Close" backgroundImage="Button-Normal">
+                                    <color key="titleColor" red="0.37647058820000001" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="closeButton:" destination="bcd-Hu-3r8" eventType="touchUpInside" id="VXv-eB-ATG"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-BP-xPK">
-                                <rect key="frame" x="249.5" y="55" width="397" height="254"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="142.5" y="69.5" width="611" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="611" id="hFo-26-i84"/>
+                                    <constraint firstAttribute="height" constant="275" id="tKa-9j-uai"/>
+                                </constraints>
                                 <string key="text">*** Bull’s Eye *** 
 
 Welcome to the awesome game of Bull’s Eye where you can win points and fame by dragging a slider.
@@ -209,22 +218,23 @@ Your goal is to place the slider as close as possible to the
 target value. The closer you are, the more points you score.
 
 Enjoy!</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JwO-Ei-uTh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="d1G-BP-xPK" firstAttribute="leading" secondItem="JwO-Ei-uTh" secondAttribute="leading" constant="205.5" id="36J-4T-mtM"/>
-                            <constraint firstItem="JwO-Ei-uTh" firstAttribute="trailing" secondItem="d1G-BP-xPK" secondAttribute="trailing" constant="205.5" id="3Ba-52-Ej5"/>
-                            <constraint firstItem="d1G-BP-xPK" firstAttribute="centerX" secondItem="hOi-t2-817" secondAttribute="centerX" id="8c7-2x-PpY"/>
                             <constraint firstItem="JwO-Ei-uTh" firstAttribute="bottom" secondItem="ZgX-mW-kIR" secondAttribute="bottom" constant="8" id="LvY-eW-ynW"/>
+                            <constraint firstItem="2Bm-e4-M0c" firstAttribute="top" secondItem="JwO-Ei-uTh" secondAttribute="top" id="RpZ-u5-haF"/>
                             <constraint firstItem="ZgX-mW-kIR" firstAttribute="centerX" secondItem="hOi-t2-817" secondAttribute="centerX" id="TUH-ee-Ekd"/>
-                            <constraint firstItem="d1G-BP-xPK" firstAttribute="top" secondItem="JwO-Ei-uTh" secondAttribute="top" constant="55" id="ejJ-k9-uj3"/>
-                            <constraint firstItem="ZgX-mW-kIR" firstAttribute="top" secondItem="d1G-BP-xPK" secondAttribute="bottom" constant="45" id="oRZ-5S-heH"/>
+                            <constraint firstItem="d1G-BP-xPK" firstAttribute="centerX" secondItem="hOi-t2-817" secondAttribute="centerX" id="fqh-Qm-kqi"/>
+                            <constraint firstAttribute="trailing" secondItem="2Bm-e4-M0c" secondAttribute="trailing" id="mvH-bI-L2S"/>
+                            <constraint firstItem="d1G-BP-xPK" firstAttribute="centerY" secondItem="hOi-t2-817" secondAttribute="centerY" id="rHT-Ov-15w"/>
                             <constraint firstItem="ZgX-mW-kIR" firstAttribute="leading" secondItem="JwO-Ei-uTh" secondAttribute="leading" constant="360" id="sNB-3j-wNi"/>
+                            <constraint firstItem="2Bm-e4-M0c" firstAttribute="leading" secondItem="hOi-t2-817" secondAttribute="leading" id="tyy-i5-wep"/>
+                            <constraint firstAttribute="bottom" secondItem="2Bm-e4-M0c" secondAttribute="bottom" id="u08-rh-TJT"/>
                             <constraint firstItem="JwO-Ei-uTh" firstAttribute="trailing" secondItem="ZgX-mW-kIR" secondAttribute="trailing" constant="360" id="yw1-W9-CIf"/>
                         </constraints>
                     </view>
@@ -241,9 +251,6 @@ Enjoy!</string>
         <image name="InfoButton" width="10" height="22"/>
         <image name="SmallButton" width="32" height="32"/>
         <image name="StartOverIcon" width="20" height="20"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
