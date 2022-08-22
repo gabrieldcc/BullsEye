@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     //MARK: - Vars
     private var targetValue = 0
@@ -125,5 +125,5 @@ final class ViewController: UIViewController {
         }
         return String()
     }
-    
+
 }

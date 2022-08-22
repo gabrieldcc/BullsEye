@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6518E56F28ABDF5A00112985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E56E28ABDF5A00112985 /* AppDelegate.swift */; };
 		6518E57128ABDF5A00112985 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E57028ABDF5A00112985 /* SceneDelegate.swift */; };
-		6518E57328ABDF5A00112985 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E57228ABDF5A00112985 /* ViewController.swift */; };
+		6518E57328ABDF5A00112985 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E57228ABDF5A00112985 /* MainViewController.swift */; };
 		6518E57628ABDF5A00112985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6518E57428ABDF5A00112985 /* Main.storyboard */; };
 		6518E57928ABDF5A00112985 /* BullsEyeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6518E57728ABDF5A00112985 /* BullsEyeApp.xcdatamodeld */; };
 		6518E57B28ABDF5C00112985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6518E57A28ABDF5C00112985 /* Assets.xcassets */; };
@@ -17,6 +17,7 @@
 		6518E58928ABDF5C00112985 /* BullsEyeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E58828ABDF5C00112985 /* BullsEyeAppTests.swift */; };
 		6518E59328ABDF5C00112985 /* BullsEyeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E59228ABDF5C00112985 /* BullsEyeAppUITests.swift */; };
 		6518E59528ABDF5C00112985 /* BullsEyeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6518E59428ABDF5C00112985 /* BullsEyeAppUITestsLaunchTests.swift */; };
+		65549D2628B3C8F70090990C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65549D2528B3C8F70090990C /* AboutViewController.swift */; };
 		65D6391E28AEC7D200B55E7D /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6391D28AEC7D200B55E7D /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +42,7 @@
 		6518E56B28ABDF5A00112985 /* BullsEyeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEyeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6518E56E28ABDF5A00112985 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6518E57028ABDF5A00112985 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6518E57228ABDF5A00112985 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6518E57228ABDF5A00112985 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6518E57528ABDF5A00112985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6518E57828ABDF5A00112985 /* BullsEyeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BullsEyeApp.xcdatamodel; sourceTree = "<group>"; };
 		6518E57A28ABDF5C00112985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		6518E58E28ABDF5C00112985 /* BullsEyeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6518E59228ABDF5C00112985 /* BullsEyeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeAppUITests.swift; sourceTree = "<group>"; };
 		6518E59428ABDF5C00112985 /* BullsEyeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65549D2528B3C8F70090990C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		65D6391D28AEC7D200B55E7D /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +108,7 @@
 				65549D1828AFDB1D0090990C /* Model */,
 				65D6392328AFCCDA00B55E7D /* Resources */,
 				65D6392128AFCCB000B55E7D /* AppDelegate */,
-				65D6392228AFCCC800B55E7D /* View */,
+				65D6392228AFCCC800B55E7D /* Screens */,
 			);
 			path = BullsEyeApp;
 			sourceTree = "<group>";
@@ -136,6 +138,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		65549D2328B3C8920090990C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				65549D2528B3C8F70090990C /* AboutViewController.swift */,
+				6518E57228ABDF5A00112985 /* MainViewController.swift */,
+				6518E57428ABDF5A00112985 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		65D6392128AFCCB000B55E7D /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,13 +157,12 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		65D6392228AFCCC800B55E7D /* View */ = {
+		65D6392228AFCCC800B55E7D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6518E57228ABDF5A00112985 /* ViewController.swift */,
-				6518E57428ABDF5A00112985 /* Main.storyboard */,
+				65549D2328B3C8920090990C /* Main */,
 			);
-			path = View;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		65D6392328AFCCDA00B55E7D /* Resources */ = {
@@ -296,9 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6518E57328ABDF5A00112985 /* ViewController.swift in Sources */,
+				6518E57328ABDF5A00112985 /* MainViewController.swift in Sources */,
 				6518E56F28ABDF5A00112985 /* AppDelegate.swift in Sources */,
 				6518E57928ABDF5A00112985 /* BullsEyeApp.xcdatamodeld in Sources */,
+				65549D2628B3C8F70090990C /* AboutViewController.swift in Sources */,
 				6518E57128ABDF5A00112985 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

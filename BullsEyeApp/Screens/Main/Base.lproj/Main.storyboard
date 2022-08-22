@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BullsEyeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="BullsEyeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,6 +101,9 @@
                                             <imageReference key="image" image="InfoButton" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="bcd-Hu-3r8" kind="show" id="0ru-Sh-Obk"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09f-7G-bRI">
                                         <rect key="frame" x="570.5" y="324" width="64" height="25"/>
@@ -167,6 +170,7 @@
                             <constraint firstAttribute="trailing" secondItem="6Yw-2s-bpq" secondAttribute="trailing" id="xJK-NO-ImP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cfd-Gj-7Zc"/>
                     <connections>
                         <outlet property="roundLabel" destination="09f-7G-bRI" id="Yxu-gM-w1i"/>
                         <outlet property="scoreLabel" destination="fll-lf-N9p" id="p45-EN-nML"/>
@@ -176,7 +180,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.419642857142858" y="82.608695652173921"/>
+            <point key="canvasLocation" x="758" y="83"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="zys-ns-ura">
+            <objects>
+                <viewController id="bcd-Hu-3r8" customClass="AboutViewController" customModule="BullsEyeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hOi-t2-817">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-mW-kIR">
+                                <rect key="frame" x="404" y="354" width="88" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Close"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="bcd-Hu-3r8" eventType="touchUpInside" id="VXv-eB-ATG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-BP-xPK">
+                                <rect key="frame" x="249.5" y="55" width="397" height="254"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">*** Bull’s Eye *** 
+
+Welcome to the awesome game of Bull’s Eye where you can win points and fame by dragging a slider.
+
+Your goal is to place the slider as close as possible to the
+target value. The closer you are, the more points you score.
+
+Enjoy!</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JwO-Ei-uTh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d1G-BP-xPK" firstAttribute="leading" secondItem="JwO-Ei-uTh" secondAttribute="leading" constant="205.5" id="36J-4T-mtM"/>
+                            <constraint firstItem="JwO-Ei-uTh" firstAttribute="trailing" secondItem="d1G-BP-xPK" secondAttribute="trailing" constant="205.5" id="3Ba-52-Ej5"/>
+                            <constraint firstItem="d1G-BP-xPK" firstAttribute="centerX" secondItem="hOi-t2-817" secondAttribute="centerX" id="8c7-2x-PpY"/>
+                            <constraint firstItem="JwO-Ei-uTh" firstAttribute="bottom" secondItem="ZgX-mW-kIR" secondAttribute="bottom" constant="8" id="LvY-eW-ynW"/>
+                            <constraint firstItem="ZgX-mW-kIR" firstAttribute="centerX" secondItem="hOi-t2-817" secondAttribute="centerX" id="TUH-ee-Ekd"/>
+                            <constraint firstItem="d1G-BP-xPK" firstAttribute="top" secondItem="JwO-Ei-uTh" secondAttribute="top" constant="55" id="ejJ-k9-uj3"/>
+                            <constraint firstItem="ZgX-mW-kIR" firstAttribute="top" secondItem="d1G-BP-xPK" secondAttribute="bottom" constant="45" id="oRZ-5S-heH"/>
+                            <constraint firstItem="ZgX-mW-kIR" firstAttribute="leading" secondItem="JwO-Ei-uTh" secondAttribute="leading" constant="360" id="sNB-3j-wNi"/>
+                            <constraint firstItem="JwO-Ei-uTh" firstAttribute="trailing" secondItem="ZgX-mW-kIR" secondAttribute="trailing" constant="360" id="yw1-W9-CIf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LRg-oB-uct"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQh-Jp-esc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447.7678571428571" y="57.971014492753625"/>
         </scene>
     </scenes>
     <resources>
@@ -185,6 +241,9 @@
         <image name="InfoButton" width="10" height="22"/>
         <image name="SmallButton" width="32" height="32"/>
         <image name="StartOverIcon" width="20" height="20"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
