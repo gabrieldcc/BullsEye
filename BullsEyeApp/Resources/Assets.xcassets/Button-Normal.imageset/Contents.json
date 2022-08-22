@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Design sem nome.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Button-Normal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -27,11 +27,9 @@ final class ViewController: UIViewController {
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSliderImages()
         startNewGame()
         setupLabels()
-        let thumbImageNormal = UIImage(systemName: "target")!
-        thumbImageNormal.withTintColor(.red)
-        slider.setThumbImage(thumbImageNormal, for: .normal)
     }
     
     //MARK: - IBActions
@@ -41,17 +39,33 @@ final class ViewController: UIViewController {
         calculatePlayerScore()
         showAlert()
     }
-
+    
     @IBAction func startsOverButton(_ sender: UIButton) {
         score = 0
         points = 0
+        round = 0
         startNewGame()
         setupLabels()
         
     }
-
+    
     //MARK: - Funcs
-
+    
+    private func setupSliderImages() {
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")!
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        let trackLeftImage = UIImage(named: "SliderTrackLeft")!
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        let trackRightImage = UIImage(named: "SliderTrackRight")!
+        let trackRightResizable = trackRightImage.resizableImage(
+            withCapInsets: insets)
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
+    }
+    
     private func startNewGame() {
         targetValue = Int.random(in: 1...100)
         round += 1
@@ -70,8 +84,14 @@ final class ViewController: UIViewController {
     }
     
     private func calculatePlayerScore() {
-        points = 100 - difference
-        score += points
+        if difference == 0 {
+            points = 200 - difference
+            score += points
+        }
+        else {
+            points = 100 - difference
+            score += points
+        }
     }
     
     private func showAlert() {
@@ -94,8 +114,8 @@ final class ViewController: UIViewController {
     }
     
     private func scoreTitle(_ difference: Int) -> String {
-        if difference <= 1 {
-            return "Perfeito!"
+        if difference == 0 {
+            return "Perfeito! Você ganhou 100 pontos de bônus"
         }
         else if difference <= 5 {
             return "Quase lá"
@@ -105,5 +125,5 @@ final class ViewController: UIViewController {
         }
         return String()
     }
-
+    
 }
