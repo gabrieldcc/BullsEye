@@ -19,10 +19,10 @@ final class MainViewController: UIViewController {
     
     
     //MARK: - IBOutlets
-    @IBOutlet weak private var targetLabel: UILabel!
     @IBOutlet weak private var slider: UISlider!
     @IBOutlet weak private var scoreLabel: UILabel!
     @IBOutlet weak private var roundLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     //MARK: - View lifecycle
     override func viewDidLoad() {
@@ -47,6 +47,12 @@ final class MainViewController: UIViewController {
         startNewGame()
         setupLabels()
         
+        let transition = CATransition()
+          transition.type = CATransitionType.fade
+          transition.duration = 1
+          transition.timingFunction = CAMediaTimingFunction(
+            name: CAMediaTimingFunctionName.easeOut)
+          view.layer.add(transition, forKey: nil)
     }
     
     //MARK: - Funcs
@@ -70,11 +76,12 @@ final class MainViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         round += 1
         setupLabels()
+ 
     }
     
     private func setupLabels() {
         scoreLabel.text = String(score)
-        targetLabel.text = String(targetValue)
+        targetLabel.text = "Coloque o alvo o mais próximo que consegue de:  \(targetValue)"
         roundLabel.text = String(round)
     }
     
